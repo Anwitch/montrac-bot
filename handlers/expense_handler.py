@@ -24,16 +24,15 @@ def _undo_keyboard(expense_id: str) -> InlineKeyboardMarkup:
 
 def _quota_error_message(e: GeminiQuotaExceeded) -> str:
     extra = (
-        f"\n\nCoba lagi dalam ~{e.retry_after_seconds} detik."
+        f"\n\nCoba lagi dalam ~{e.retry_after_seconds} detik ya."
         if e.retry_after_seconds
-        else "\n\nCoba lagi sebentar lagi."
+        else "\n\nCoba lagi beberapa saat lagi ya."
     )
     return (
-        "⚠️ Lagi kena limit/kuota Gemini API untuk sementara."
+        "😅 Waduh, otakku lagi overload nih!"
         + extra
-        + "\n\nKalau sering kejadian, cek quota & billing di Google AI Studio / Google Cloud."
+        + "\n\nSementara itu, kamu bisa catat dulu di Notes terus masukin nanti."
     )
-
 
 async def handle_expense(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.effective_user.id)
