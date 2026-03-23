@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 def get_supabase() -> Client:
     global _client
     if _client is None:
-        key = settings.SUPABASE_ANON_KEY or ""
+        key = settings.SUPABASE_SERVICE_KEY or ""
         logger.info(
             "Initializing Supabase client url=%s key_len=%d key_dots=%d key_has_ellipsis=%s",
             settings.SUPABASE_URL,
@@ -19,5 +19,5 @@ def get_supabase() -> Client:
             key.count("."),
             ("..." in key),
         )
-        _client = create_client(settings.SUPABASE_URL, settings.SUPABASE_ANON_KEY)
+        _client = create_client(settings.SUPABASE_URL, settings.SUPABASE_SERVICE_KEY)
     return _client

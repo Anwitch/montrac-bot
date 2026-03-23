@@ -8,7 +8,7 @@ load_dotenv()
 class Settings:
     TELEGRAM_BOT_TOKEN: str = os.getenv("TELEGRAM_BOT_TOKEN", "")
     SUPABASE_URL: str = os.getenv("SUPABASE_URL", "")
-    SUPABASE_ANON_KEY: str = os.getenv("SUPABASE_ANON_KEY", "")
+    SUPABASE_SERVICE_KEY: str = os.getenv("SUPABASE_SERVICE_KEY", "")
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
 
     @staticmethod
@@ -25,7 +25,7 @@ class Settings:
 
     def validate(self):
         missing = []
-        for field in ["TELEGRAM_BOT_TOKEN", "SUPABASE_URL", "SUPABASE_ANON_KEY", "GEMINI_API_KEY"]:
+        for field in ["TELEGRAM_BOT_TOKEN", "SUPABASE_URL", "SUPABASE_SERVICE_KEY", "GEMINI_API_KEY"]:
             if not getattr(self, field):
                 missing.append(field)
         if missing:
@@ -40,9 +40,9 @@ class Settings:
                 "Invalid SUPABASE_URL. Expected format like 'https://<project-ref>.supabase.co'."
             )
 
-        if not self._looks_like_jwt(self.SUPABASE_ANON_KEY):
+        if not self._looks_like_jwt(self.SUPABASE_SERVICE_KEY):
             raise ValueError(
-                "Invalid SUPABASE_ANON_KEY. It must be the full 'anon public' JWT (three dot-separated parts) "
+                "Invalid SUPABASE_SERVICE_KEY. It must be the full 'service_role' JWT (three dot-separated parts) "
                 "from Supabase Project Settings → API. Don't use '...' placeholder."
             )
 
