@@ -1,4 +1,13 @@
-# 🤖 Montrac Bot
+> [!WARNING]
+> **Repo ini sudah tidak aktif dikembangkan.**
+> Proyek ini telah berganti nama menjadi **Kedut — Kemana Duitku?** dan dipindahkan ke repo baru:
+> 👉 **[github.com/Anwitch/kedut-bot](https://github.com/Anwitch/kedut-bot)**
+>
+> Bot Telegram baru tersedia di: [t.me/KemanaDuitku_Bot](https://t.me/KemanaDuitku_Bot)
+
+---
+
+# ~~🤖 Montrac Bot~~ → Sekarang: [Kedut Bot](https://github.com/Anwitch/kedut-bot)
 
 > **Bot Telegram untuk mencatat pengeluaran harian secara natural — cukup ketik atau foto struk, sisanya diurus AI.**
 
