@@ -34,7 +34,7 @@ logging.getLogger("httpx").setLevel(logging.WARNING)
 
 def main() -> None:
     settings.validate()
-    logger.info("Starting Montrac bot...")
+    logger.info("Starting Kedut bot...")
 
     request = HTTPXRequest(
         connect_timeout=20,
